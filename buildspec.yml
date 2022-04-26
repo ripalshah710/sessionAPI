@@ -1,0 +1,14 @@
+version: 0.2
+phases:    
+  install:
+    runtime-versions:
+      dotnet: latest
+        
+  pre_build:
+    commands:
+      - echo Restore started on `date`
+      - dotnet restore SessionInfoApi.csproj
+  build:
+    commands:
+      - echo Build started on `date`
+      - dotnet publish -c release -o ./build_output SessionInfoApi.csproj
