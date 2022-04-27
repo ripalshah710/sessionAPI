@@ -13,7 +13,6 @@ phases:
       - echo Build started on `date`
       - dotnet publish -c release -o ./build_output SessionInfoApi.csproj
 artifacts:
+  type: zip
   files:
     - '**/*'
-  base-directory: base_dir
-  name: build-artifact-name
