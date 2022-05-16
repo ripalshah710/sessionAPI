@@ -1,12 +1,33 @@
+#version: 0.0
+#Resources:
+#  - myLambdaFunction:
+#      Type: AWS::Lambda::Function
+#      Properties:
+#        Name: "myLambdaFunction"
+#        Alias: "myLambdaFunctionAlias"
+#        CurrentVersion: "1"
+#        TargetVersion: "2"
+#Hooks:
+#  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+#  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
 version: 0.0
-Resources:
-  - myLambdaFunction:
-      Type: AWS::Lambda::Function
-      Properties:
-        Name: "netcoreAPILambda"
-        Alias: "myLambdaFunctionAlias"
-        CurrentVersion: "1"
-        TargetVersion: "2"
-Hooks:
-  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
-  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
+os: linux
+files:
+  - source: /
+    destination: /SessionInfoApi.csproj
+#  - source: source
+#    destination: /webapps/myApp
+#hooks:
+#  BeforeInstall:
+#    - location: Scripts/UnzipResourceBundle.sh
+#    - location: Scripts/UnzipDataBundle.sh
+#  AfterInstall:
+#    - location: Scripts/RunResourceTests.sh
+#      timeout: 180
+#  ApplicationStart:
+#    - location: Scripts/RunFunctionalTests.sh
+#      timeout: 3600
+#  ValidateService:
+#    - location: Scripts/MonitorService.sh
+#      timeout: 3600
+#      runas: codedeployuser
