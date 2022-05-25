@@ -91,11 +91,22 @@ namespace SessionInfoApi
             {
                 endpoints.MapControllers();
             });
-            app.UseSwagger();
+            app.UseSwagger(c =>
+            {
+                c.SerializeAsV2 = true;
+            });
+
+
             app.UseSwaggerUI(c =>
             {
+                c.DefaultModelsExpandDepth(-1);
+#if DEBUG
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SessionInfoAPI v1");
-               // c.RoutePrefix = string.Empty;
+
+#else                // To deploy on IIS
+                c.SwaggerEndpoint("swagger/v1/swagger.json", "SessionInfoAPI v1");
+#endif
+                c.RoutePrefix = string.Empty;
             });
         }
     }

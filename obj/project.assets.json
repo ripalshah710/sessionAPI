@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v5.0": {
+    "net5.0": {
       "log4net/2.0.14": {
         "type": "package",
         "dependencies": {
@@ -826,7 +826,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v5.0": [
+    "net5.0": [
       "Newtonsoft.Json >= 13.0.1",
       "Swashbuckle.AspNetCore >= 5.6.3",
       "System.Data.SqlClient >= 4.8.3",
@@ -834,23 +834,19 @@
     ]
   },
   "packageFolders": {
-    "/home/ayushi/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/home/ec2-user/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ayushi/Desktop/demoAPI/SessionInfoApi.csproj",
+      "projectUniqueName": "/home/ec2-user/sessionAPI/SessionInfoApi.csproj",
       "projectName": "SessionInfoApi",
-      "projectPath": "/home/ayushi/Desktop/demoAPI/SessionInfoApi.csproj",
-      "packagesPath": "/home/ayushi/.nuget/packages/",
-      "outputPath": "/home/ayushi/Desktop/demoAPI/obj/",
+      "projectPath": "/home/ec2-user/sessionAPI/SessionInfoApi.csproj",
+      "packagesPath": "/home/ec2-user/.nuget/packages/",
+      "outputPath": "/home/ec2-user/sessionAPI/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/home/ayushi/.nuget/NuGet/NuGet.Config"
+        "/home/ec2-user/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -860,6 +856,7 @@
       },
       "frameworks": {
         "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {}
         }
       },
@@ -871,6 +868,7 @@
     },
     "frameworks": {
       "net5.0": {
+        "targetAlias": "net5.0",
         "dependencies": {
           "Newtonsoft.Json": {
             "target": "Package",
@@ -889,7 +887,25 @@
             "version": "[2.0.14, )"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.417/RuntimeIdentifierGraph.json"
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
       }
     }
   }
