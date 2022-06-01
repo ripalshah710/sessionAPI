@@ -16,6 +16,5 @@ artifacts:
   type: zip
   files:
 #    - '**/*'
-     - appspec.yml
-     - '**/*'
+     - appspec.yaml
 

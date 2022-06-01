@@ -1,33 +1,33 @@
-#version: 0.0
-#Resources:
-#  - myLambdaFunction:
-#      Type: AWS::Lambda::Function
-#      Properties:
-#        Name: "myLambdaFunction"
-#        Alias: "myLambdaFunctionAlias"
-#        CurrentVersion: "1"
-#        TargetVersion: "2"
+version: 0.0
+Resources:
+  - sessioninfo-API:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "sessioninfo-API"
+        Alias: "default"
+        CurrentVersion: "1"
+        TargetVersion: "1"
 #Hooks:
 #  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
 #  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
-version: 0.0
-os: linux
-files:
-  - source: /
-    destination: /SessionInfoApi.csproj
+###version: 0.0
+###os: linux
+##files:
+  ##- source: /
+    ##destination: /SessionInfoApi.csproj
 #  - source: source
 #    destination: /webapps/myApp
-hooks:
-  BeforeInstall:
+###hooks:
+  ##BeforeInstall:
 #    - location: Scripts/UnzipResourceBundle.sh
 #    - location: Scripts/UnzipDataBundle.sh
-  AfterInstall:
+  ##AfterInstall:
 #    - location: Scripts/RunResourceTests.sh
 #      timeout: 180
-  ApplicationStart:
+  ##ApplicationStart:
 #    - location: Scripts/RunFunctionalTests.sh
 #      timeout: 3600
-  ValidateService:
+  ##ValidateService:
 #    - location: Scripts/MonitorService.sh
 #      timeout: 3600
 #      runas: codedeployuser
